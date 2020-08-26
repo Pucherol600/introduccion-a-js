@@ -10,9 +10,27 @@ Desafío de programación #1: Imprimí los números del 1 al 10
 
  Resultado: 10 9 8 7 6 5 4 3 2 1
 
- Desafìo de programación  #2: Imprimí los números impares del 1 al 100
+*/
+function imprimirNumeros(){
+  for (let i = 1; i <= 10; i++){
+    console.log(i);
+  }
+}
+/*
+
+Desafìo de programación  #2: Imprimí los números impares del 1 al 100
 
  1 3 5 ... 99
+
+*/
+function imprimirImpares(){
+  for (let i = 1; i <= 100; i++){
+    if(i % 2 != 0){
+      console.log(i);
+    }
+  }
+}
+/*
 
 Desafío de programación #3: Imprimí la tabla de multiplicación del 7
 
@@ -20,6 +38,14 @@ Desafío de programación #3: Imprimí la tabla de multiplicación del 7
  7x1 = 7
  ...
  7x9 = 63
+*/
+function tablaDelSiete(){
+  for(let i = 0; i <= 10; i++){
+    resultado = 7 * i;
+    console.log(`7 x ${i} = ${resultado}`);
+  }
+}
+/*
 
 Desafío de programación #4: Imprimí todas las tablas de multiplicación del 1 al 9
 
@@ -33,36 +59,174 @@ Desafío de programación #4: Imprimí todas las tablas de multiplicación del 1
  ...
  9x9 = 81
 
+*/
+function tablasDeMultiplicar(){
+  for(let i = 1; i <= 9; i++){
+    for(let j = 0; j <=9; j++){
+      resultado = i * j;
+      console.log(`${i} x ${j} = ${resultado}`);
+    }
+  }
+}
+
+/*
+
 Desafío de programación #5: Calcula el resultado de la suma de los numeros del 1 al 10 en un array.
  [1,2,3,4,5,6,7,8,9,10]
 
  1 + 2 + 3 + ... + 10 = ? //hacerlo con un array y un bucle
 
-Desafío de programación #6: Calcula 10! (10 factorial)
+*/
+let listaDeNumeros = [100, 5, 6, -56, 1, 54, -22, 31, -5];
+let listaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function sumarArray(array){
+  let sumaValores = 0;
+  let arrayLargo = array.length
+  for(let i = 0; i < arrayLargo; i++){
+    sumaValores = sumaValores + array[i];
+  }
+  console.log(sumaValores);
+}
+
+
+/*
+ Desafío de programación #6: Calcula 10! (10 factorial)
 
  10 * 9 * 8 * ... * 1
 
+ */
+function calcularFactorial(num){
+  let resultado = 1
+  for(let i = 1; i <= num; i++){
+    resultado = resultado * i;
+  }
+  console.log(resultado);
+}
+
+ /*
+
 Desafío de programación #7: Calcula la suma de todos los números impares mayores que 10 y menores que 30
+
+*/
+function calcularImpares(numMin, numMax){
+  for(i = numMin; i <= numMax; i++){
+    if(i % 2 != 0){
+      console.log(i);
+    }
+  }
+}
+/*
 
 Desafío de programación #8: Crea una función que convierta de Celsius a Fahrenheit
 
 Desafío de programación #9: Crea una función que convierta de Fahrenheit a Celsius
 
+*/
+function convertirCeAFa(gradosC){
+  gradosF = (gradosC * 9/5) + 32;
+  return gradosF;
+}
+
+function convertirFaACe(gradosF){
+  gradosC = (gradosF - 32) * 5/9;
+  return gradosC;
+}
+/*
+
 Desafío de programación #10: Calcula la suma de todos los números en un array de números
+//yataecho arriba
+
 
 Desafío de programación #11: Calcula el promedio de todos los números en un array de números. (en una función)
+*/
+function calcularPromedio(array){
+  let sumaValores = 0;
+  for(let i = 0; i < array.length; i++){
+    sumaValores += array[i];
+  }
+  let promedioValores = sumaValores / array.length;
+  console.log(promedioValores);
+} 
+/*
 
 Desafío de programación #12: Crea una función que reciba un array de números y devuelva un array conteniendo solo los números positivos
 
+*/
+function pasarArrayAPositivo(array){
+  let nuevoArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i] < 0){
+      nuevoArray[i] = array[i] * (-1);
+    } else{
+      nuevoArray[i] = array[i];
+    }
+  }
+  return nuevoArray;
+}
+/*
+
 Desafío de programación #13: Find the maximum number in an array of numbers
 
-Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
+*/
+function numeroMayorArray(array){
+  let numeroMax = array[0];
+  for(let i = 1; i < array.length; i++){
+    if(numeroMax < array[i]){
+      numeroMax = array[i];
+    }
+  }
+  return numeroMax;
+}
+/*
 
+Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
 Fibonacci (lo buscan en google si no lo saben o no se acuerdan)
 El resultado debería ser: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
 
-Desafío de programación #15: Crear una función que encuentre el número n de Fibonacci usando recursión
+*/
+//mi solucion
+function sucesionDeFibonacci(digitos){
+  digitos = digitos - 2 
+  let sucesion = [0, 1]
+  let digito;
+  for(let i = 1; i <= digitos; i++){
+    digito = sucesion[i - 1] + sucesion[i]; 
+    sucesion.push(digito);
+  }
+  return sucesion;
+}
+//solucion
+function fibo(){
+  let f0 = 0;
+  console.log(f0);
 
+  let f1 = 1;
+  console.log(f1);
+
+  for(let i = 2; i < 10; i++){
+      let fi = f1 + f0;
+      console.log(fi);
+      
+      f0 = f1;
+      f1 = fi;
+  }
+}
+/*
+
+Desafío de programación #15: Crear una función que encuentre el número n de Fibonacci usando recursión
+*/
+function findFibonacci(n)
+{
+    if (n == 0)
+        return 0;   
+    if (n == 1)
+        return 1;
+    return findFibonacci(n - 1) + findFibonacci(n - 2);
+}
+console.log(findFibonacci(3));
+
+
+/*
 Desafío de programación #16: Crear una función que dado un número retorne un Boolean (true/false) dependiendo si es primo o no.
 
 Desafío de programación #17: Calcular la suma de los dígitos positivos de un número entero positivo

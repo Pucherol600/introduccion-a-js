@@ -1,9 +1,62 @@
+function fizzBuzzClasico(numero){
+    for(let i = 1; i <= numero; i++){
+        if(i % 3 === 0 && i % 5 === 0){
+            console.log("FizzBuzz");
+        } else if(i % 3 === 0){
+            console.log("Fizz");
+        } else if(i % 5 === 0){
+            console.log("Buzz");
+        } else{
+            console.log(i);
+        }
+    }
+}
+
+function fizzBuzzCheto(){
+    for(let i = 1; i <= 30; i++){
+        let texto = "";
+        if(i % 3 === 0){
+            texto = "Fizz";
+        }
+        if(i % 5 === 0){
+            texto += "Buzz";
+        }
+        console.log(texto || i);
+    }
+}
+
+
+
+
+
 // TAREA: Imprimí cada 3er número del 3 al 22 usando un 'bucle for'.
+
+function multiplos(numeros, multiplo){
+    console.log(`Mostrando multiplos de ${multiplo}`);
+    for(let i = multiplo; i <= numeros; i += multiplo){
+        console.log(i);
+    }
+}
 
 
 // TAREA: Usando un bucle 'while', decile a tu computadora que registre los números de
 //       diez a uno.
-
+function registrarNumeros(numeros){
+    let numerosRegistrados = [];
+    let cont = 1;
+    while(cont <= numeros){
+        numerosRegistrados.push(cont);
+        cont++;
+    }
+    return numerosRegistrados;
+}
+function mostrarNumeros(array){
+    arraySize = array.length;
+    console.log("Numeros del array de Mayor a Menor");
+    for(let i = arraySize; i >= 0; i--){
+        console.log(array[i])
+    }
+}
 
 // TAREA: Ha llegado el momento de un ejercicio clásico: 'FizzBuzz'.
 // Cuenta del 1 al 50 e imprime los números:

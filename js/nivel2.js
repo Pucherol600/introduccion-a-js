@@ -193,7 +193,8 @@
 
 
 
-
+let animales = ['pez', 'perro', 'gato', 'raton'];
+animales.push('caballo');
 
 
 /*
@@ -246,6 +247,13 @@
 // TAREA: Usando un bucle 'while', decile a tu computadora que registre los números de
 //       diez a uno.
 
+//let cont = 0;
+
+// while(cont <= 10){
+//     console.log(`Numero: ${cont}`);
+//     cont++;
+// }
+// cont = 0;
 
 
 
@@ -268,6 +276,9 @@
 
 // TAREA: Imprimí cada 3er número del 3 al 22 usando un 'bucle for'.
 
+// for(let i = 0; i <=22; i += 3){
+//     console.log(i);
+// }
 
 
 
@@ -339,7 +350,32 @@
 // 16% 4 = 0 - en 16 tenemos 4 * 4
 // 19% 4 = 3 - en 19 tenemos 4 * 4 + 3, etc.
 
+function FizzBuzzClasico(numero){
+    for(let i = 1; i <= numero; i++){
+        if(i % 3 === 0 && i % 5 === 0){
+            console.log("FizzBuzz");
+        } else if(i % 3 === 0){
+            console.log("Fizz");
+        } else if(i % 5 === 0){
+            console.log("Buzz");
+        } else{
+            console.log(i);
+        }
+    }
+}
 
+function FizzBuzzCheto(){
+    for(let i = 1; i <= 30; i++){
+        let texto = "";
+        if(i % 3 === 0){
+            texto = "Fizz";
+        }
+        if(i % 5 === 0){
+            texto += "Buzz";
+        }
+        console.log(texto || i);
+    }
+}
 
 
 

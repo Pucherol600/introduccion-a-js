@@ -39,7 +39,7 @@
 */
 
 // Tarea: Ahora te toca a vos! Acá abajo escribí una alerta que diga "Hola mundo!"
-
+//alert("Hola Mundo! :v");
 
 // Tarea: Una vez que la alerta funcione, comentala poniendo '//' en la línea donde está el código y guardá los cambios.
 // Una vez que recargás la página, ya no debería aparecer más.
@@ -54,6 +54,12 @@
 
 // Consejo: El atajo del teclado para guardar cambios a un archivo es 'CMD + S' en Mac y 'CTRL + S' en
 //      Windows.
+/*
+let nombre;
+nombre = "Agusvi";
+console.log("El nombre es: " + nombre);
+*/
+
 
 
 /*
@@ -114,8 +120,11 @@
 
 // Crear 2 variables nuevas, una con tu nombre, la segunda con tu edad. Dales un nombre apropriado y
 // mostralas con un alert.
-
-
+/*
+const nombre = "Agustin";
+const apellido = "Videla";
+alert("Mi nombres es: " + nombre + " " + apellido);
+*/
 // Consejo: para mostrar 2 variables de texto al mismo tiempo, las podés unir usando el signo '+'. Ejemplo:
 
 /*
@@ -182,7 +191,12 @@
 // * 3ra variable llamada resultadoMultiplicacion que va a ser igual a
 // la 1ra variable multiplicada (con el operador *) por la 2nda variable.
 // Mostrar el valor de resultadoMultiplicacion con un alert o un console.log
-
+/*
+let num1 = 10;
+let num2 = 3;
+let resultadoMultiplicacion = num1 * num2;
+console.log("El resultado de la Multiplicación es: " + resultadoMultiplicacion);
+*/
 
 /*
     Funciones
@@ -232,6 +246,11 @@
          }
 */
 
+// function duplicarNumero(numero){
+//     return numero * 2;
+// };
+
+//console.log(duplicarNumero(30));
 // TAREA: Es tu turno de crear una función!
 
 // Creá una función llamada 'sumar'
@@ -239,16 +258,66 @@
 // Escribí código para que devuelva (return) la suma de numero1 y numero2
 // Ejecutá la función sumar y mostrá su resultado en la consola
 
+function sumarNumeros(num1, num2) {
+    let suma = num1 + num2;
+    return suma;
+};
 
+function dividirNumeros(num1, num2) {
+    let resultado = num1 / num2;
+    return resultado;
+};
+
+function multiplicarNumeros(num1, num2) {
+    let resultado = num1 * num2;
+    return resultado;
+};
+
+//alert("La suma es: " + sumarNumeros(5, 3));
 // TAREA: Ahora creemos otra función llamada 'restar'
 //       Que acepte 2 números como parámetro y los reste, y que devuelva ese valor.
 // Ejecutá la función con los números 5 y 1 y mostralos con console.log
+function restarNumeros(num1, num2) {
+    let resta = num1 - num2;
+    return resta;
+};
 
+//console.log("la resta es " + restarNumeros(5,1));
 
 // Consejo: Sabías que en vez de pasar los números directamente a tu función podés crear variables con esos números
 // y pasarlos como parámetros? Probalo!
 
 // Consejo: Dejá las funciones como están, no las comentes, las vamos a usar de nuevo.
+
+function saludarUsuario(nombre) {
+    return "Hola! " + nombre + " todo bien?";
+};
+
+//let nombreUsuario = prompt("Ingresa tu nombre: ");
+
+//alert(saludarUsuario(nombreUsuario));
+
+/*
+alert("Voy a calcular tu edad: ");
+let anioActual = prompt("Ingresa el Año actual: ");
+let anioNacimiento = prompt("Ingresa tu año de nacimiento: ");
+
+function calcularEdad(anioActual, anioNac){
+    return anioActual - anioNac;
+};
+
+alert("Tenes " + calcularEdad(anioActual, anioNacimiento) + " años.");
+*/
+
+// alert("Voy a calcular tu sueldo anual: ");
+// let sueldoMensual = Number(prompt("Ingresa tu sueldo mensual: "));
+
+// function calcularSueldoAnual(sueldo){
+//     const meses = 12;
+//     return sueldo * meses;
+// };
+
+// alert("Tu sueldo anual es: " + calcularSueldoAnual(sueldoMensual));
 
 /*
     Condicionales If-Else
@@ -329,7 +398,33 @@
 
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
 
+function comenzarCalculo() {
+    let operacion = prompt("Ingrese el signo de la operacion a realizar");
+    if (operacion === "+" || operacion === "-" || operacion === "/" || operacion === "*") {
+        let num1 = Number(prompt("ingresa el primer numero: "));
+        let num2 = Number(prompt("ingresa el segundo numero: "));
 
+        alert(`El resultado de la ${operacion} es ${realizarOperacion(operacion, num1, num2)}`);
+    } else {
+        alert("Ingresaste mal la operacion");
+    }
+}
+function realizarOperacion(operacion, num1, num2) {
+    let resultado;
+    if (operacion === "-") {
+        resultado = restarNumeros(num1, num2);
+    } else if (operacion === "+") {
+        resultado = sumarNumeros(num1, num2);
+    } else if (operacion === "/") {
+        resultado = dividirNumeros(num1, num2);
+    } else if (operacion === "*") {
+        resultado = multiplicarNumeros(num1, num2);
+    }
+    return resultado;
+}
+
+alert("SALE ESA CUENTA PRRO");
+comenzarCalculo();
 /*
     'If' - 'Else if' - 'Else'
     ===================
@@ -341,7 +436,7 @@
         //algo
     else
         //algo que va a pasar si no se cumple ningún otra condición
-        
+
 
     Ejemplo:
 
@@ -354,7 +449,7 @@
         console.log('Nuestro número es igual a 7');
     }
 
-    Consejo: Podemos usar la cantidad de 'else if' que queramos uno después del otro, 
+    Consejo: Podemos usar la cantidad de 'else if' que queramos uno después del otro,
     el primero que es 'verdadero' es el único que pasa.
 */
 
@@ -379,7 +474,7 @@
     =================
     Poner un signo de exclamación (!) antes de un valor Booleano nos da el valor OPUESTO.
     Este operador ! se llama el operador "not".
-    
+
     El resultado de una comparación es un valor Booleano, lo podemos guardar en una variable así:
 
     const bool = (1 < 2);
