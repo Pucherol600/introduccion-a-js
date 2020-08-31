@@ -124,7 +124,10 @@
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
 
-
+const miTitulo = document.querySelector('h1');
+console.log(miTitulo);
+console.log(miTitulo.innerText);
+miTitulo.innerText = "HOLI!";
 
 
 
@@ -146,7 +149,7 @@
 
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
-
+const mediaLinks = document.querySelectorAll('li');
 
 
 
@@ -288,3 +291,18 @@
 // Levántate, estira las piernas y celebra tu logro.                      //
 // ¡Creo que esto amerita un festejo!                                     //
 ////////////////////////////////////////////////////////////////////////////
+
+const $botonIngreso = document.querySelector('#ingresar');
+
+$botonIngreso.onclick = function(){
+    const $edadUsuario = Number(document.querySelector('#edad-usuario').value);
+    let textoResultado;
+    if($edadUsuario < 18){
+        textoResultado = "No podes ingresar";
+    }else{
+        textoResultado = "Podes ingresar";
+    }
+
+    document.querySelector('#resultado').innerText = textoResultado;
+    return false;
+}
